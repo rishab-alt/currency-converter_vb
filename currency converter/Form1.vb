@@ -1,5 +1,3 @@
-﻿
-Imports System.Windows
 
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,13 +10,14 @@ Public Class Form1
         to_Currency.Items.Add("GBP")
     End Sub
 
-    Private Sub calcuate_Click(sender As Object, e As EventArgs) Handles calculate.Click
-        Dim conversionRate As Double = Convert.ToDouble(conversionRate)
-        Dim total As Double = Convert.ToDouble(amount.Text)
+    Private Sub calculate_Click(sender As Object, e As EventArgs) Handles calculate.Click
+        Dim conversionRate As Double = Convert.ToDouble(conversion.Text)
 
-        Dim convertTotal As Double = conversionRate * total
+        Dim totalAmount As Double = Convert.ToDouble(amount.Text)
 
-        result.Text = " From " & from_Currency.Text & " at " & conversionRate & " to " & to_Currency.Text & total & " Total is " & convertTotal
+        Dim convertTotal As Double = conversionRate * totalAmount
+
+        result.Text = " From " & from_Currency.Text & " at " & conversionRate & " to " & to_Currency.Text & " Total is " & convertTotal
     End Sub
 
     Private Sub From_currency_SelectedIndexChanged(sender As Object, e As EventArgs) Handles from_Currency.SelectedIndexChanged
@@ -28,8 +27,6 @@ Public Class Form1
                 from_Currency.SelectedIndex = -1
             End If
         End If
-
-
     End Sub
 
     Private Sub to_Currency_SelectedIndexChanged(sender As Object, e As EventArgs) Handles to_Currency.SelectedIndexChanged
@@ -45,4 +42,6 @@ Public Class Form1
         Dim help As New help()
         help.Show()
     End Sub
+
+
 End Class
