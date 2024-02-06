@@ -1,5 +1,10 @@
+
 ﻿Public Class Form1
     'items declared in combo box 
+=======
+
+Public Class Form1
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         from_Currency.Items.Add("USD")
         from_Currency.Items.Add("EUR")
@@ -15,11 +20,22 @@
     Private Sub calculate_Click(sender As Object, e As EventArgs) Handles calculate.Click
         Dim conversionRate As Double = Convert.ToDouble(Conversion.Text)
 
+
         Dim totalAmount As Double = Convert.ToDouble(amount.Text)
 
         Dim convertTotal As Double = conversionRate * totalAmount
 
         showResult.Text = " From " & from_Currency.Text & " at " & conversionRate & " to " & to_Currency.Text & " Total is " & convertTotal
+
+    Private Sub calculate_Click(sender As Object, e As EventArgs) Handles calculate.Click
+        Dim conversionRate As Double = Convert.ToDouble(conversion.Text)
+
+        Dim totalAmount As Double = Convert.ToDouble(amount.Text)
+
+        Dim convertTotal As Double = conversionRate * totalAmount
+
+        result.Text = " From " & from_Currency.Text & " at " & conversionRate & " to " & to_Currency.Text & " Total is " & convertTotal
+
     End Sub
     'checks if the from and to currencies are the SAME
     Private Sub From_currency_SelectedIndexChanged(sender As Object, e As EventArgs) Handles from_Currency.SelectedIndexChanged
@@ -45,4 +61,9 @@
         help.Show()
     End Sub
 
+
 End Class
+
+
+End Class
+
